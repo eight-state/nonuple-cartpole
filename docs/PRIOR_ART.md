@@ -5,7 +5,7 @@ the **first public n=9 cart-pole swing-up-and-balance artifact by any method**
 (unperturbed closed-loop leg + a banked perturbed-IC pre-roll gate, 24/24 on
 three seeds), and certainly the first open-source, code-reproducible one. The
 full prior-art tables for n=5 and n=6 (Glück 2013 hardware triple, Lam &
-Davison 2006 base-torque stabilization, the unverified quintuple video,
+Davison 2006 base-torque stabilization, the Ozana quintuple simulation video,
 Kotelovych 2024 Isaac Sim n=5 balance, yacine's 2026 public RL n=6 post) live
 in the sibling releases:
 
