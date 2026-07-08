@@ -1,0 +1,15 @@
+# 9-link cart-pole race spec (M0 dynamics fields).
+# Coordinate convention: q = [x_cart, theta_1..theta_n]; theta=0 => UP, pi => DOWN.
+n_links: 9
+cart_mass_kg: 1.0
+link_masses_kg:  [0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10]
+link_lengths_m:  [0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50]
+link_inertia: slender_rod_about_com   # I_i = m_i * l_i^2 / 12 (informational; ignored by loader)
+gravity_m_s2: 9.81
+damping_cart_n_s_m: 0.0
+damping_links_n_m_s_rad: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+force_bound_n: 150.0
+track_half_length_m: 10.0
+
+control_rate_hz: 1000        # control_dt = 0.001 s, zero-order hold
+rk4_max_step_s: 0.00025      # 4 RK4 substeps per control tick at 1 kHz
