@@ -121,7 +121,7 @@ def wilson(k,nn,z=1.96):
 def main():
     n_ic=int(sys.argv[1]) if len(sys.argv)>1 else 24
     seed=int(sys.argv[2]) if len(sys.argv)>2 else 12345
-    T_pre=float(sys.argv[3]) if len(sys.argv)>3 else 6.0  # adaptive pre-roll CAP
+    T_pre=float(sys.argv[3]) if len(sys.argv)>3 else 9.0  # adaptive pre-roll CAP (matches banked gate)
     workers=int(sys.argv[4]) if len(sys.argv)>4 else max(1,(os.cpu_count() or 2)-1)
     from concurrent.futures import ProcessPoolExecutor
     tasks=[(t,seed,T_pre) for t in range(n_ic)]

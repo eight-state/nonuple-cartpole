@@ -11,8 +11,9 @@ densification → exact-ZOH discrete-time TVLQR), with one n=9-specific
 ingredient — a **velocity penalty** (`w_v`) in the collocation objective that
 tames an otherwise-untrackable swing-up. The perturbed-IC gate is **new and
 much lighter than n=8's**: a **pre-roll**, not a per-IC replan. Physics,
-saturated simulator, perturbation model, seeds, and the locked success
-predicate are byte-for-byte the n=5..8 releases'.
+saturated simulator, perturbation model, and the locked success predicate are
+byte-for-byte the n=5..8 releases'. The gate runs three seeds (12345, 777,
+2024); 12345 and 777 are both n=8 release seeds, 2024 is fresh.
 
 > **The claim, stated narrowly.** From what our search found, this is the
 > first public, code-reproducible n=9 cart-pole swing-up-and-balance artifact
@@ -36,7 +37,7 @@ predicate are byte-for-byte the n=5..8 releases'.
 | Simulator | 1 ms ZOH, RK4 (0.25 ms substeps), hard `np.clip` force saturation |
 | Nominal | 10.0 s, peak feedforward **41.4 N** (3.6x margin), terminal 0.0115° |
 | Parent NLP | 2500 nodes / 4 ms, RK4-4ms transcription defect **8.25e-8**, `w_v=6e-4` |
-| Densification seams (4 ms boundaries) | max **1.13e-5** (~50x cleaner than n=8; the `w_v` nominal is smooth) |
+| Densification seams (4 ms boundaries) | max **1.13e-5** (~375x cleaner than n=8; the `w_v` nominal is smooth) |
 | Closed-loop monodromy (discrete TVLQR) | **rho = 0.0736** |
 | Unperturbed swing-up + hold | **PASS** (swing peak 41.4 N; saturating static-LQR catch, ~14° transient recovers, then holds 8.6 s continuous in-set) |
 | Perturbed gate, **pre-roll** (fixed nominal, no replan), σ=0.02 | **24/24** on **each** of seeds 12345, 777, 2024 (**72/72**), ~4 min/seed |

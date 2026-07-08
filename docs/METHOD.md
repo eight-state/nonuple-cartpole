@@ -27,8 +27,8 @@ added to the objective (`w_v = 6e-4`). Converged: RK4-4ms transcription defect
 solves cleanly (defect 6.0e-12, terminal 0.0115° open-loop) but its closed-loop
 track **diverges at t≈2.96 s** to a 128.98° handoff, pinning 150 N for 70% of
 ticks. Root cause: the force-optimal swing-up is too violent — peak link rate
-**46.9 rad/s** vs n=8's trackable 30.6 — past the 1 ms-ZOH TVLQR
-linearization's validity in the saturated nonlinear sim. Giving it *unlimited*
+**46.9 rad/s**, past the 1 ms-ZOH TVLQR linearization's validity in the
+saturated nonlinear sim. Giving it *unlimited*
 force diverges worse (NaN at t=2.96 s), which is the decisive proof it is NOT a
 force-authority wall. Penalizing Σvel² cuts the peak rate to **12.5 rad/s** and
 restores trackability, at negligible force cost (41.4 N peak). Softening or
@@ -38,7 +38,7 @@ it is the trajectory, not the gains.
 ## 3. Densify + control
 
 Densification onto the exact 1 ms sim grid: max node-boundary seam **1.129e-5**
-(~50× *smaller* than n=8's 4.233e-3, because the `w_v` nominal is smooth).
+(~375× *smaller* than n=8's 4.233e-3, because the `w_v` nominal is smooth).
 Exact-ZOH discrete-time TVLQR along the dense nominal: **monodromy rho =
 0.0736** (contractive; the continuous-Riccati interpolated-gain TVLQR is
 closed-loop unstable along this nominal — the discrete design is the fix, as at

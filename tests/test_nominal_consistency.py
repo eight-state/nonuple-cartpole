@@ -9,7 +9,7 @@ The committed claims tested here (all MEASURED on this artifact):
   1. intra-segment ticks reproduce exactly under the simulator's ZOH step
      (defect < 1e-10; measured 0.0),
   2. node-boundary seams < 5e-5 state units (measured max 1.129e-5; the
-     velocity-penalized nominal is smooth, so ~50x cleaner than n=8's 4.2e-3),
+     velocity-penalized nominal is smooth, so ~375x cleaner than n=8's 4.2e-3),
   3. the 4 ms parent solve's own RK4-4ms transcription defect < 5e-7
      (measured 8.248e-08, matching the solve log),
   4. peak feedforward force < 50 N (measured 41.35 N) — 3.6x margin to the

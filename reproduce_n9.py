@@ -17,7 +17,8 @@ Fast mode (~1 min):
      Expected: PASS, swing peak ~41 N, handoff ~0.0115 deg.
 
 Gate mode (--gate): the PRE-ROLL perturbed-IC gate at sigma=0.02 (identical
-  perturbation model, seeds, simulator, and predicate as the n=5..8 releases):
+  perturbation model, simulator, and predicate as the n=5..8 releases; seeds
+  12345 and 777 are n=8 release seeds, 2024 is fresh):
   per-IC LQR-about-down pre-roll (settles the sigma=0.02 hanging perturbation
   back to the nominal start) -> discrete TVLQR track the swing-up nominal ->
   static-LQR hold. NO per-IC NLP (~1000x cheaper than the n=8 composite replan).
