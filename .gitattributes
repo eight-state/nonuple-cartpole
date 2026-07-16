@@ -1,0 +1,16 @@
+* text=auto eol=lf
+
+# Frozen release authorities retain canonical Git bytes on every platform.
+configs/env-base.yaml -text
+results/gate_n9_preroll_seed12345.json -text
+results/gate_n9_preroll_seed777.json -text
+results/gate_n9_preroll_seed2024.json -text
+results/nom_n9_4ms_wv6en4.npz -text
+results/nom_n9_dense1ms_wv6en4.npz -text
+src/cartpole_race/__init__.py -text
+src/cartpole_race/discrete_tvlqr.py -text
+src/cartpole_race/dynamics.py -text
+src/cartpole_race/env_spec.py -text
+src/cartpole_race/lqr.py -text
+src/cartpole_race/predicate.py -text
+src/cartpole_race/release.py -text
