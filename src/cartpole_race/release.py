@@ -172,7 +172,7 @@ def run_live(stack: ReleaseStack | None = None) -> LiveRun:
         "closed_loop": {
             "monodromy_rho": stack.tracker.monodromy(),
             "handoff_max_angle_error_deg": handoff_deg,
-            "longest_continuous_hold_s": hold_s,
+            "longest_sampled_hold_s": hold_s,
             "track_peak_abs_m": track_peak_m,
             "applied_peak_force_n": float(np.max(np.abs(applied))),
             "raw_peak_force_n": float(np.max(np.abs(raw))),
@@ -356,7 +356,7 @@ def _report_live(run: LiveRun) -> None:
     closed_loop = run.metrics["closed_loop"]
     print(
         f"[live] handoff {closed_loop['handoff_max_angle_error_deg']:.7f} deg; "
-        f"hold {closed_loop['longest_continuous_hold_s']:.3f} s; "
+        f"hold {closed_loop['longest_sampled_hold_s']:.3f} s; "
         f"applied/raw peak {closed_loop['applied_peak_force_n']:.7f}/"
         f"{closed_loop['raw_peak_force_n']:.7f} N; clips {closed_loop['clip_ticks']}; "
         f"rho {closed_loop['monodromy_rho']:.7g} -> PASS",
