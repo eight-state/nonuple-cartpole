@@ -1,4 +1,4 @@
-"""The public five-second claim measures elapsed intervals, not samples."""
+"""The public five-second claim spans consecutive 1 kHz sampled states."""
 
 import numpy as np
 
